@@ -31,8 +31,7 @@ body {
   --cursor-stroke: #6b5537;
   --cursor-fill: none;
   --cursor-stroke-width: 1px;
-  font-family: Raleway, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica,
-    Arial, sans-serif;
+  font-family: Raleway, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -85,17 +84,6 @@ a:focus {
   }
 }
 
-.message {
-  position: relative;
-  z-index: 100;
-  text-align: center;
-  background: var(--color-text);
-  color: var(--color-bg);
-  padding: 1rem;
-  font-size: 0.85rem;
-  position: relative;
-}
-
 .no-select {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -136,11 +124,11 @@ a:focus {
   text-decoration: none;
 }
 
-.content {
+.main__content {
   display: flex;
   flex-direction: column;
   width: 100vw;
-  height: calc(100vh - 13rem);
+  height: 100vh;
   position: relative;
   align-items: center;
 }
@@ -194,6 +182,83 @@ a:focus {
   }
 }
 
+.border-gradient {
+  border: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(
+    to left,
+    #ffe29d,
+    #ffae9e,
+    #d0b1ff,
+    #7dd5f4,
+    #6cefd1
+  );
+  --angle: 0deg;
+  animation: 10s rotate linear infinite;
+  border-image: linear-gradient(
+      var(--angle),
+      #ffe29d,
+      #ffae9e,
+      #d0b1ff,
+      #7dd5f4,
+      #6cefd1
+    )
+    1;
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+.navbar {
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+}
+
+.navbar__menu {
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+}
+
+.navbar__menu--right {
+  position: absolute;
+  right: 0;
+  display: flex;
+  gap: 2em;
+  margin-right: 1rem;
+}
+
+.navbar__menu--link {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+}
+
 .main__heading {
   width: 60vw;
   background: rgba(255, 255, 255, 0.05);
@@ -212,6 +277,7 @@ a:focus {
   animation: fadein 5s;
   border-radius: 3em;
   padding: 2rem;
+  margin-top: 10%;
   margin-bottom: 3rem;
 }
 
@@ -279,42 +345,6 @@ a:focus {
   text-align: center;
   font-size: 6vw;
   margin-left: 0.1em;
-}
-
-.border-gradient {
-  border: 1px solid;
-  border-image-slice: 1;
-  border-image-source: linear-gradient(
-    to left,
-    #ffe29d,
-    #ffae9e,
-    #d0b1ff,
-    #7dd5f4,
-    #6cefd1
-  );
-  --angle: 0deg;
-  animation: 10s rotate linear infinite;
-  border-image: linear-gradient(
-      var(--angle),
-      #ffe29d,
-      #ffae9e,
-      #d0b1ff,
-      #7dd5f4,
-      #6cefd1
-    )
-    1;
-}
-
-@keyframes rotate {
-  to {
-    --angle: 360deg;
-  }
-}
-
-@property --angle {
-  syntax: '<angle>';
-  initial-value: 0deg;
-  inherits: false;
 }
 
 .button {
@@ -455,6 +485,10 @@ a:focus {
   width: calc(100% + 100px);
   height: calc(100% + 100px);
   will-change: transform;
+}
+
+.tickets {
+  height: 100vh;
 }
 
 /* Shorthand grid-area: grid-row-start / grid-column-start / grid-row-end / grid-column-end */
