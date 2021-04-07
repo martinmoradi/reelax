@@ -6110,7 +6110,7 @@ return ImagesLoaded;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.preloadImages = exports.getMousePos = exports.getRandomNumber = exports.calcWinsize = exports.lerp = exports.map = void 0;
+exports.animateButton = exports.preloadImages = exports.getMousePos = exports.getRandomNumber = exports.calcWinsize = exports.lerp = exports.map = void 0;
 
 var imagesLoaded = require('imagesloaded'); // Map number x from range [a, b] to [c, d]
 
@@ -6173,6 +6173,17 @@ var preloadImages = function preloadImages(selector) {
 };
 
 exports.preloadImages = preloadImages;
+
+var animateButton = function animateButton(e) {
+  document.querySelector('.button').onmousemove = function (e) {
+    var x = e.pageX - e.target.offsetLeft;
+    var y = e.pageY - e.target.offsetTop;
+    e.target.style.setProperty('--x', "".concat(x, "px"));
+    e.target.style.setProperty('--y', "".concat(y, "px"));
+  };
+};
+
+exports.animateButton = animateButton;
 },{"imagesloaded":"../node_modules/imagesloaded/imagesloaded.js"}],"js/cursor.js":[function(require,module,exports) {
 "use strict";
 
@@ -6393,7 +6404,7 @@ var Grid = /*#__PURE__*/function () {
       }, 0).to(this.items, {
         duration: 3,
         ease: 'Power1.easeOut',
-        opacity: 0.4,
+        opacity: 0.5,
         stagger: {
           amount: 0.6,
           grid: 'auto',
@@ -6426,6 +6437,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
   var grid = new _grid.default(document.querySelector('.grid'));
 });
 var cursor = new _cursor.default(document.querySelector('.cursor'));
+(0, _utils.animateButton)();
 },{"./cursor":"js/cursor.js","./grid":"js/grid.js","./utils":"js/utils.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';

@@ -1,6 +1,6 @@
 import Cursor from './cursor';
 import Grid from './grid';
-import { preloadImages } from './utils';
+import { preloadImages, animateButton } from './utils';
 
 // Preload  images
 preloadImages('.grid__item-img, .bigimg').then(() => {
@@ -12,3 +12,5 @@ preloadImages('.grid__item-img, .bigimg').then(() => {
 });
 
 const cursor = new Cursor(document.querySelector('.cursor'));
+
+animateButton();

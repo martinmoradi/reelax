@@ -74,7 +74,7 @@ export default class Grid {
         {
           duration: 3,
           ease: 'Power1.easeOut',
-          opacity: 0.4,
+          opacity: 0.5,
           stagger: { amount: 0.6, grid: 'auto', from: 'center' },
         },
         0
