@@ -11,8 +11,8 @@
     <link rel="stylesheet" href="https://use.typekit.net/eqx3jwb.css" />
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
   </head>
-  <body class="loading">
-    <main class="main__content">
+  <body class="loading" data-scroll-container>
+    <main class="main__content data-scroll-section">
       <div class="navbar border-gradient">
         <ul class="navbar__menu">
           <div class="navbar__menu--logo">
@@ -38,7 +38,7 @@
           </div>
         </ul>
       </div>
-      <div class="grid">
+      <div class="grid" data-scroll data-scroll-speed="2">
         <div class="grid__item pos-1">
           <div
             class="grid__item-img"
@@ -100,7 +100,7 @@
           ></div>
         </div>
       </div>
-      <div class="main__heading loading">
+      <div class="main__heading loading" data-scroll data-scroll-speed="0.5">
         <!-- <img
             class="main__heading--logo"
             src="img/reelax.svg"
@@ -129,7 +129,154 @@
         </button>
       </div>
     </main>
-    <section class="tickets"></section>
+    <div class="tiles__heading">
+      <h1 class="content__title-sub">
+        Les billets des uns font le
+        <span class="text--gradient">bonheur </span>des
+        <span class="text--gradient">autres</span>
+      </h1>
+    </div>
+
+    <section class="tiles tiles--rotated tickets" id="grid2">
+      <div class="tiles__wrap">
+        <div
+          class="tiles__line"
+          data-scroll
+          data-scroll-speed="1"
+          data-scroll-target="#grid2"
+          data-scroll-direction="horizontal"
+        >
+          <div class="tiles__line-img"></div>
+          <div class="tiles__line-img"></div>
+          <div class="tiles__line-img"></div>
+          <div
+            class="tiles__line-img"
+            style="background-image: url(img/4.jpg)"
+          ></div>
+          <div
+            class="tiles__line-img"
+            style="background-image: url(img/5.jpg)"
+          ></div>
+          <div
+            class="tiles__line-img"
+            style="background-image: url(img/6.jpg)"
+          ></div>
+        </div>
+        <div
+          class="tiles__line"
+          data-scroll
+          data-scroll-speed="-1"
+          data-scroll-target="#grid2"
+          data-scroll-direction="horizontal"
+        >
+          <div class="tiles__line-img"></div>
+          <div
+            class="tiles__line-img"
+            style="background-image: url(img/8.jpg)"
+          ></div>
+          <div
+            class="tiles__line-img"
+            style="background-image: url(img/9.jpg)"
+          ></div>
+          <div
+            class="tiles__line-img"
+            style="background-image: url(img/10.jpg)"
+          ></div>
+          <div
+            class="tiles__line-img"
+            style="background-image: url(img/1.jpg)"
+          ></div>
+          <div
+            class="tiles__line-img"
+            style="background-image: url(img/2.jpg)"
+          ></div>
+        </div>
+        <div
+          class="tiles__line"
+          data-scroll
+          data-scroll-speed="1"
+          data-scroll-target="#grid2"
+          data-scroll-direction="horizontal"
+        >
+          <div
+            class="tiles__line-img"
+            style="background-image: url(img/3.jpg)"
+          ></div>
+          <div
+            class="tiles__line-img"
+            style="background-image: url(img/4.jpg)"
+          ></div>
+          <div
+            class="tiles__line-img"
+            style="background-image: url(img/5.jpg)"
+          ></div>
+          <div
+            class="tiles__line-img"
+            style="background-image: url(img/6.jpg)"
+          ></div>
+          <div
+            class="tiles__line-img"
+            style="background-image: url(img/7.jpg)"
+          ></div>
+          <div
+            class="tiles__line-img"
+            style="background-image: url(img/8.jpg)"
+          ></div>
+        </div>
+        <div
+          class="tiles__line"
+          data-scroll
+          data-scroll-speed="-1"
+          data-scroll-target="#grid2"
+          data-scroll-direction="horizontal"
+        >
+          <div
+            class="tiles__line-img"
+            style="background-image: url(img/9.jpg)"
+          ></div>
+          <div
+            class="tiles__line-img"
+            style="background-image: url(img/2.jpg)"
+          ></div>
+          <div
+            class="tiles__line-img"
+            style="background-image: url(img/1.jpg)"
+          ></div>
+          <div
+            class="tiles__line-img"
+            style="background-image: url(img/2.jpg)"
+          ></div>
+          <div
+            class="tiles__line-img"
+            style="background-image: url(img/3.jpg)"
+          ></div>
+          <div class="tiles__line-img"></div>
+        </div>
+        <div
+          class="tiles__line"
+          data-scroll
+          data-scroll-speed="1"
+          data-scroll-target="#grid2"
+          data-scroll-direction="horizontal"
+        >
+          <div class="tiles__line-img"></div>
+          <div
+            class="tiles__line-img"
+            style="background-image: url(img/6.jpg)"
+          ></div>
+          <div
+            class="tiles__line-img"
+            style="background-image: url(img/7.jpg)"
+          ></div>
+          <div
+            class="tiles__line-img"
+            style="background-image: url(img/8.jpg)"
+          ></div>
+          <div class="tiles__line-img"></div>
+          <div class="tiles__line-img"></div>
+        </div>
+      </div>
+    </section>
     <!-- <svg class="cursor" width="80" height="80" viewBox="0 0 80 80">
       <circle class="cursor__inner" cx="40" cy="40" r="20" />
     </svg> -->
